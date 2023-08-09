@@ -16,6 +16,11 @@
             width:300px;
             height:50px;
         }
+
+        .big-number {
+            font-size: 36px;
+            width:fit-content;
+        }
     </style>
 </head>
 <body>
@@ -25,14 +30,14 @@
 
 
     <div class="container p-0 text-center border border-gray rounded mt-2" style="width:350px;">
-        <h3 class="bg-dark text-light p-3 rounded">Subtract if first number is greater than second number. Multiply if not!</h3>
+        <h3 class="bg-dark text-light p-3 rounded">Which number is greater?</h3>
         <form action="" method="get" class="bg-light">
 
             <input type="number" name="firstNumber" class="border border-gray rounded d-inline-flex mt-2" placeholder=" First Number">
 
             <input type="number" name="secondNumber" class="border border-gray rounded d-inline-flex mt-2" placeholder=" Second Number">
 
-            <button class="submit btn btn-lg bg-danger text-light rounded d-inline-flex my-4" name="submit">Compute</button>
+            <button class="submit btn btn-lg bg-danger text-light rounded d-inline-flex my-4" name="submit">Check</button>
         </form>
     </div>
 
@@ -43,16 +48,24 @@
 
 function compute($num1, $num2){
     if($num1 > $num2){
-        echo "<div class='card card-body bg-dark text-light text-center mt-3'>
-        First Number: $num1<br>
-        Second Number: $num2<br><br>
-        The Answer is: $num1 $num2";
+        echo "<div class='card card-body bg-dark text-light mt-3'>
+            <table>
+                <tr>
+                    <td class='big-number text-left'>$num1</td>
+                    <td class='small-number text-right'>$num2</td>
+                </tr>
+            </table>
+        </div>";
     }
     else if($num2 > $num1){
-        echo "<div class='card card-body bg-dark text-light text-center mt-3'>
-        First Number: $num1<br>
-        Second Number: $num2<br><br>
-        The Answer is: $num2 $num1";
+        echo "<div class='card card-body bg-dark text-light mt-3'>
+            <table>
+                <tr>
+                    <td class='big-number text-left'>$num2</td>
+                    <td class='small-number text-right'>$num1</td>
+                </tr>
+            </table>
+        </div>";
     }
 }
 
